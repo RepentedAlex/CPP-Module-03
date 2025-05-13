@@ -4,23 +4,27 @@
 #include <string>
 
 #define PRINT_42 \
-	do { \
-std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
-	} \
-	while (0)
+do \
+{ \
+	std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
+} \
+while (0)
 
 class ClapTrap
 {
 	public:
-		ClapTrap();
-		ClapTrap(std::string name);
-		~ClapTrap();
-		ClapTrap(ClapTrap const &original);
-		ClapTrap	&operator=(ClapTrap const &original);
-
-		void		attack(const std::string &target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
+		// Constructors
+			ClapTrap();
+			ClapTrap(std::string name);
+			ClapTrap(ClapTrap const &original);
+		// Destructors
+			~ClapTrap();
+		// Operator overloads
+			ClapTrap	&operator=(ClapTrap const &original);
+		// Member functions
+			void		attack(const std::string &target);
+			void		takeDamage(unsigned int amount);
+			void		beRepaired(unsigned int amount);
 
 	private:
 		std::string		_name;
