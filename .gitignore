@@ -38,5 +38,8 @@ ex03/DiamondTrap
 # Temporary files
 .cache_exists
 
+# .clangd
+.clangd
+
 # CLion files
 .idea/
