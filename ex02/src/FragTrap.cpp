@@ -1,5 +1,6 @@
 #include "FragTrap.hpp"
 
+///CONSTRUCTORS/////////////////////////////////////////////////////////////////
 FragTrap::FragTrap() : ClapTrap()
 {
 	PRINT_42;
@@ -16,16 +17,18 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_attackDamage = 30;
 }
 
-FragTrap::~FragTrap()
-{
-	PRINT_42;
-}
-
 FragTrap::FragTrap(FragTrap const &original) : ClapTrap(original)
 {
 	PRINT_42;
 }
 
+///DESTRUCTORS//////////////////////////////////////////////////////////////////
+FragTrap::~FragTrap()
+{
+	PRINT_42;
+}
+
+///OPERATOR OVERLOADS///////////////////////////////////////////////////////////
 FragTrap	&FragTrap::operator=(FragTrap const &original)
 {
 	PRINT_42;
@@ -36,6 +39,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &original)
 	return (*this);
 }
 
+///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void	FragTrap::highFivesGuys()
 {
 	std::cout << "FragTrap " << this->_name << ": High Fives Guys!" << std::endl;

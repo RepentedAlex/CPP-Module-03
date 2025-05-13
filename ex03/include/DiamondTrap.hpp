@@ -5,22 +5,26 @@
 #include "FragTrap.hpp"
 
 #define PRINT_42 \
-	do { \
-std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
-	} \
-	while (0)
+do \
+{ \
+	std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
+} \
+while (0)
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 	public:
-		DiamondTrap();
-		DiamondTrap(std::string name);
-		virtual ~DiamondTrap();
-		DiamondTrap(DiamondTrap const &original);
-		DiamondTrap	&operator=(DiamondTrap const &original);
-
-		void	attack(const std::string &target);
-		void	whoAmI();
+		// Constructors
+			DiamondTrap();
+			DiamondTrap(std::string name);
+			DiamondTrap(DiamondTrap const &original);
+		// Destructors
+			virtual ~DiamondTrap();
+		// Operator overloads
+			DiamondTrap	&operator=(DiamondTrap const &original);
+		// Member functions
+			void		attack(const std::string &target);
+			void		whoAmI();
 
 	private:
 		std::string	_name;

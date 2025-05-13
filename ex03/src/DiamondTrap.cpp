@@ -1,5 +1,6 @@
 #include "DiamondTrap.hpp"
 
+///CONSTRUCTORS/////////////////////////////////////////////////////////////////
 DiamondTrap::DiamondTrap() : ClapTrap("ct_default_dimnd")
 {
 	PRINT_42;
@@ -24,11 +25,13 @@ DiamondTrap::DiamondTrap(DiamondTrap const &original) : ClapTrap(original), Scav
 	*this = original;
 }
 
+///DESTRUCTORS//////////////////////////////////////////////////////////////////
 DiamondTrap::~DiamondTrap()
 {
 	PRINT_42;
 }
 
+///OPERATOR OVERLOADS///////////////////////////////////////////////////////////
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &original)
 {
 	PRINT_42;
@@ -39,6 +42,7 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &original)
 	return (*this);
 }
 
+///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void	DiamondTrap::attack(const std::string &target)
 {
 	ScavTrap::attack(target);

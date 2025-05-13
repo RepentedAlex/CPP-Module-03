@@ -1,19 +1,14 @@
+#include <iostream>
+
 #include "ClapTrap.hpp"
 
-#include <iostream>
-#include <ostream>
-
+///CONSTRUCTORS/////////////////////////////////////////////////////////////////
 ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	PRINT_42;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
-{
-	PRINT_42;
-}
-
-ClapTrap::~ClapTrap()
 {
 	PRINT_42;
 }
@@ -25,6 +20,13 @@ ClapTrap::ClapTrap(ClapTrap const &original)
 	*this = original;
 }
 
+///DESTRUCTORS//////////////////////////////////////////////////////////////////
+ClapTrap::~ClapTrap()
+{
+	PRINT_42;
+}
+
+///OPERATOR OVERLOADS///////////////////////////////////////////////////////////
 ClapTrap	&ClapTrap::operator=(ClapTrap const &original)
 {
 	PRINT_42;
@@ -36,7 +38,8 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &original)
 	return (*this);
 }
 
-void		ClapTrap::attack(const std::string &target)
+///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
+void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_energyPoints <= 0)
 	{
@@ -62,7 +65,7 @@ void		ClapTrap::attack(const std::string &target)
 	}
 }
 
-void		ClapTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitPoints <= 0)
 	{
@@ -82,7 +85,7 @@ void		ClapTrap::takeDamage(unsigned int amount)
 	std::endl;
 }
 
-void		ClapTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energyPoints > 0 && this->_hitPoints > 0 && this->_hitPoints + amount <= 10)
 	{

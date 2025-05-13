@@ -14,17 +14,16 @@ while (0)
 class FragTrap : public ClapTrap
 {
 	public:
-	// Constructors
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(FragTrap const &original);
-
-	// Destructor
-		virtual ~FragTrap();
-
-		FragTrap	&operator=(FragTrap const &original);
-
-		void	highFivesGuys();
+		// Constructors
+			FragTrap();
+			FragTrap(std::string name);
+			FragTrap(FragTrap const &original);
+		// Destructor
+			virtual	~FragTrap();
+		// Operator overloads
+			FragTrap	&operator=(FragTrap const &original);
+		// Member functions
+			void		highFivesGuys();
 };
 
 #endif //FRAGTRAP_HPP

@@ -1,19 +1,14 @@
+#include <iostream>
+
 #include "ClapTrap.hpp"
 
-#include <iostream>
-#include <ostream>
-
+///CONSTRUCTORS/////////////////////////////////////////////////////////////////
 ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	PRINT_42;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
-{
-	PRINT_42;
-}
-
-ClapTrap::~ClapTrap()
 {
 	PRINT_42;
 }
@@ -25,6 +20,13 @@ ClapTrap::ClapTrap(ClapTrap const &original)
 	*this = original;
 }
 
+///DESTRUCTORS//////////////////////////////////////////////////////////////////
+ClapTrap::~ClapTrap()
+{
+	PRINT_42;
+}
+
+///OPERATOR OVERLOADS///////////////////////////////////////////////////////////
 ClapTrap	&ClapTrap::operator=(ClapTrap const &original)
 {
 	PRINT_42;
@@ -36,6 +38,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &original)
 	return (*this);
 }
 
+///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void		ClapTrap::attack(const std::string &target)
 {
 	if (this->_energyPoints <= 0)

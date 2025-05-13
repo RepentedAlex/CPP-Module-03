@@ -1,5 +1,6 @@
 #include "ScavTrap.hpp"
 
+///CONSTRUCTORS/////////////////////////////////////////////////////////////////
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	PRINT_42;
@@ -24,11 +25,13 @@ ScavTrap::ScavTrap(ScavTrap const &original) : ClapTrap(original)
 	this->_gateKeeper = original._gateKeeper;
 }
 
+///DESTRUCTORS//////////////////////////////////////////////////////////////////
 ScavTrap::~ScavTrap()
 {
 	PRINT_42;
 }
 
+///OPERATOR OVERLOADS///////////////////////////////////////////////////////////
 ScavTrap	&ScavTrap::operator=(ScavTrap const &original)
 {
 	PRINT_42;
@@ -40,6 +43,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &original)
 	return (*this);
 }
 
+///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void	ScavTrap::attack(const std::string &target)
 {
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
