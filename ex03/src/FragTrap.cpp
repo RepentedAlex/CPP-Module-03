@@ -32,6 +32,9 @@ FragTrap::~FragTrap()
 FragTrap	&FragTrap::operator=(FragTrap const &original)
 {
 	PRINT_42;
+
+	if (this == &original)
+		return (*this);
 	this->_name = original._name;
 	this->_hitPoints = original._hitPoints;
 	this->_energyPoints = original._energyPoints;

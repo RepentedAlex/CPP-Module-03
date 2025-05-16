@@ -35,6 +35,9 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &original)
 {
 	PRINT_42;
+
+	if (this == &original)
+		return (*this);
 	this->_name = original._name + "_clap_name";
 	this->_hitPoints = original._hitPoints;
 	this->_energyPoints = original._energyPoints;

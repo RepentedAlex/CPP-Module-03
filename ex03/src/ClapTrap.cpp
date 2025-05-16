@@ -31,6 +31,8 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &original)
 {
 	PRINT_42;
 
+	if (this == &original)
+		return (*this);
 	this->_name = original._name;
 	this->_hitPoints = original._hitPoints;
 	this->_energyPoints = original._energyPoints;
@@ -62,6 +64,7 @@ void	ClapTrap::attack(const std::string &target)
 		" attacks " << target << ", causing " << this->_attackDamage <<
 		" points of damage!" <<
 		std::endl;
+		this->_energyPoints--;
 	}
 }
 
