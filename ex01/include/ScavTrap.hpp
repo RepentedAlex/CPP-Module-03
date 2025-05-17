@@ -6,11 +6,9 @@
 #include "ClapTrap.hpp"
 
 #define PRINT_42 \
-do \
-{ \
-	std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
-} \
-while (0)
+		do { \
+			std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
+		} while (0)
 
 class ScavTrap : public ClapTrap
 {

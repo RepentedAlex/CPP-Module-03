@@ -3,12 +3,15 @@
 
 #include <string>
 
+// peut etre add un define avec les values de bases ?
+//		ou alors le mettre en static const int dans la classe?
+//		oui ca marche tres bien comme ca mais si tu dois changer loes values 
+//		c'est chiant. + bon reflexe
+
 #define PRINT_42 \
-do \
-{ \
-	std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
-} \
-while (0)
+	do { \
+		std::cout << __PRETTY_FUNCTION__ << "\t called" << std::endl; \
+	} while (0)
 
 class ClapTrap
 {
@@ -27,6 +30,7 @@ class ClapTrap
 			void		beRepaired(unsigned int amount);
 
 	private:
+	// no get set ? (no set is ok, but no getHP() ? no getSP() ? )
 		std::string		_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;

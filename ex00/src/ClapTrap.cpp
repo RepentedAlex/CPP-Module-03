@@ -74,16 +74,20 @@ void		ClapTrap::takeDamage(unsigned int amount)
 		"ClapTrap " << this->_name <<
 		" is already dead!" <<
 		std::endl;
+		// ta oublie le return ici mon pote
 	}
 	else if (this->_hitPoints < amount)
 		this->_hitPoints = 0;
 	else
 		this->_hitPoints -= amount;
 
+	// joli affichage mais tu fais pas le montant de damage de amount si ses 
+	// hitpoints sont inferieur a amount, donc c'est pas la bonne string
 	std::cout <<
 	"ClapTrap " << this->_name <<
 	" took " << amount << " points of damage!" <<
 	std::endl;
+
 }
 
 void		ClapTrap::beRepaired(unsigned int amount)

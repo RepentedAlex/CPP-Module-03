@@ -20,6 +20,8 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 FragTrap::FragTrap(FragTrap const &original) : ClapTrap(original)
 {
 	PRINT_42;
+
+	*this = original;
 }
 
 ///DESTRUCTORS//////////////////////////////////////////////////////////////////

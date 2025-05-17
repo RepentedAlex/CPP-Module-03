@@ -22,7 +22,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const &original) : ClapTrap(original)
 {
 	PRINT_42;
-	this->_gateKeeper = original._gateKeeper;
+	this->_gateKeeper = original._gateKeeper; // once again why not the other fields ?
+	*this = original;
 }
 
 ///DESTRUCTORS//////////////////////////////////////////////////////////////////

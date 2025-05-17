@@ -1,15 +1,24 @@
 #include <iostream>
 #include "ScavTrap.hpp"
 
+// same def-> colors
+#define BLUE	"\033[0;104m"
+#define RESET	"\033[0m"
+
+#define PRINT_SECTION_TITLE(x) \
+	do { \
+		std::cout << BLUE x RESET << std::endl; \
+	} while (0)
+
 int main()
 {
-	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
+	PRINT_SECTION_TITLE("### TESTING CLAPTRAP ###\n");
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tConstructing");
 		ClapTrap a;
 		ClapTrap b("Cody");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tTesting");
 		a.attack("some other robot");
 		a.takeDamage(10);
 		a.takeDamage(10);
@@ -19,15 +28,17 @@ int main()
 		for (int i = 0; i < 12; i++)
 			b.attack("Cody-clone");
 		b.beRepaired(3);
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
-	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
+	std::cout << std::endl << std::endl;
+	PRINT_SECTION_TITLE("### TESTING SCAVTRAP ###");
+	std::endl(std::cout); // instead of \n in the string
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tConstructing");
 		ScavTrap c;
 		ScavTrap d("Savage");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tTesting");
 		c.attack("CloneTrap");
 		// for (int i = 0; i < 50; i++)
 		// 	c.attack("CloneTrap");
@@ -40,7 +51,7 @@ int main()
 		d.takeDamage(101);
 		d.takeDamage(15);
 		d.attack("ScavTrap-clone");
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
 	return (0);
 }

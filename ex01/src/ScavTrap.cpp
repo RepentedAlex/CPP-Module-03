@@ -25,6 +25,19 @@ ScavTrap::ScavTrap(ScavTrap const &original) : ClapTrap(original)
 {
 	PRINT_42;
 	this->_gateKeeper = original._gateKeeper;
+	// why did you not set the hp / stamina when you construct by copy?
+	//	this is supposed to copy original, for me if i gave you a half broken 
+	//	original i would expect a half broken copy
+	// solution :
+	//
+	// 	this->_hitPoints = original.getHP(); 
+	// 	this->_energyPoints = original.getStamina();
+	//
+	// 	or
+	//
+	// 	*this = original; // like in clapTrap
+	//
+	*this = original;
 }
 
 ///DESTRUCTORS//////////////////////////////////////////////////////////////////
