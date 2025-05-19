@@ -45,17 +45,17 @@ std::string const ClapTrap::getName() const
 	return (this->_name);
 }
 
-unsigned int const	ClapTrap::getHitPoints() const
+unsigned int	ClapTrap::getHitPoints() const
 {
 	return (this->_hitPoints);
 }
 
-unsigned int const	ClapTrap::getEnergyPoints() const
+unsigned int	ClapTrap::getEnergyPoints() const
 {
 	return (this->_energyPoints);
 }
 
-unsigned int const	ClapTrap::getAttackDamage() const
+unsigned int	ClapTrap::getAttackDamage() const
 {
 	return (this->_attackDamage);
 }
@@ -117,9 +117,13 @@ void		ClapTrap::takeDamage(unsigned int amount)
 		"ClapTrap " << this->_name <<
 		" is already dead!" <<
 		std::endl;
+		return ;
 	}
 	else if (this->_hitPoints < amount)
+	{
+		amount = _hitPoints;
 		this->_hitPoints = 0;
+	}
 	else
 		this->_hitPoints -= amount;
 

@@ -2,15 +2,18 @@
 
 #include "ClapTrap.hpp"
 
+#define BLUE	"\033[34m"
+#define RESET	"\033[0m"
+
 int main()
 {
-	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
+	std::cout << "### TESTING CLAPTRAP ###" << std::endl;
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		std::cout << BLUE "Constructing" RESET << std::endl;
 		ClapTrap a;
 		ClapTrap b("Cody");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << BLUE "Testing" RESET << std::endl;
 		a.attack("some other robot");
 		a.takeDamage(10);
 		a.takeDamage(10);
@@ -20,7 +23,7 @@ int main()
 		for (int i = 0; i < 12; i++)
 			b.attack("Cody-clone");
 		b.beRepaired(3);
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		std::cout << BLUE "Deconstructing" RESET << std::endl;
 	}
 	return (0);
 }

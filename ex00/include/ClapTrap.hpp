@@ -23,9 +23,9 @@ class ClapTrap
 			ClapTrap	&operator=(ClapTrap const &original);
 		// Getters
 			std::string const	getName() const;
-			unsigned int const	getHitPoints() const;
-			unsigned int const	getEnergyPoints() const;
-			unsigned int const	getAttackDamage() const;
+			unsigned int	getHitPoints() const;
+			unsigned int	getEnergyPoints() const;
+			unsigned int	getAttackDamage() const;
 		// Setters
 			void				setName(std::string name);
 			void				setHitPoints(unsigned int amount);
