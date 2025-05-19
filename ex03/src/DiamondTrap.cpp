@@ -1,10 +1,10 @@
 #include "DiamondTrap.hpp"
 
 ///CONSTRUCTORS/////////////////////////////////////////////////////////////////
-DiamondTrap::DiamondTrap() : ClapTrap("ct_default_dimnd")
+DiamondTrap::DiamondTrap() : ClapTrap("d_default_clap_name")
 {
 	PRINT_42;
-	this->_name = "diamond default";
+	this->_name = "d_default";
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;

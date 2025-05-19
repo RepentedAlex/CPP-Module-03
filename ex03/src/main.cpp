@@ -26,7 +26,7 @@ int main()
 		c.takeDamage(21);
 		c.beRepaired(22);
 		c.whoAmI();
-		c.whoAmI();
+		d.whoAmI();
 		d.attack("Malingen-clone");
 		d.takeDamage(101);
 		d.takeDamage(15);
