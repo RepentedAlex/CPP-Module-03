@@ -23,6 +23,10 @@ class ScavTrap : public ClapTrap
 			virtual ~ScavTrap();
 		// Operator overloads
 			ScavTrap	&operator=(ScavTrap const &original);
+		// Getters
+			bool	getGateKeeper() const;
+		// Setters
+			void		setGateKeeper(bool mode);
 		// Member functions
 			void		attack(const std::string &target);
 			void		guardGate();

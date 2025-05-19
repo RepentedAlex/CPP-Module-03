@@ -1,6 +1,6 @@
-#include <iostream>
-
 #include "ClapTrap.hpp"
+
+#include <iostream>
 
 ///CONSTRUCTORS/////////////////////////////////////////////////////////////////
 ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
@@ -38,6 +38,50 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &original)
 	return (*this);
 }
 
+///GETTERS//////////////////////////////////////////////////////////////////////
+
+std::string const ClapTrap::getName() const
+{
+	return (this->_name);
+}
+
+unsigned int	ClapTrap::getHitPoints() const
+{
+	return (this->_hitPoints);
+}
+
+unsigned int	ClapTrap::getEnergyPoints() const
+{
+	return (this->_energyPoints);
+}
+
+unsigned int	ClapTrap::getAttackDamage() const
+{
+	return (this->_attackDamage);
+}
+
+///SETTERS//////////////////////////////////////////////////////////////////////
+
+void	ClapTrap::setName(std::string name)
+{
+	this->_name = name;
+}
+
+void	ClapTrap::setHitPoints(unsigned int amount)
+{
+	this->_hitPoints = amount;
+}
+
+void	ClapTrap::setEnergyPoints(unsigned int amount)
+{
+	this->_energyPoints = amount;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int amount)
+{
+	this->_attackDamage = amount;
+}
+
 ///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void		ClapTrap::attack(const std::string &target)
 {
@@ -73,9 +117,13 @@ void		ClapTrap::takeDamage(unsigned int amount)
 		"ClapTrap " << this->_name <<
 		" is already dead!" <<
 		std::endl;
+		return ;
 	}
 	else if (this->_hitPoints < amount)
+	{
+		amount = _hitPoints;
 		this->_hitPoints = 0;
+	}
 	else
 		this->_hitPoints -= amount;
 

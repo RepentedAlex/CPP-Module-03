@@ -24,7 +24,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const &original) : ClapTrap(original)
 {
 	PRINT_42;
-	this->_gateKeeper = original._gateKeeper;
+	this->_gateKeeper = original.getGateKeeper();
+	*this = original;
 }
 
 ///DESTRUCTORS//////////////////////////////////////////////////////////////////
@@ -43,6 +44,18 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &original)
 	this->_attackDamage = original._attackDamage;
 	this->_gateKeeper = original._gateKeeper;
 	return (*this);
+}
+
+///GETTERS//////////////////////////////////////////////////////////////////////
+bool	ScavTrap::getGateKeeper() const
+{
+	return (this->_gateKeeper);
+}
+
+///SETTERS//////////////////////////////////////////////////////////////////////
+void	ScavTrap::setGateKeeper(bool mode)
+{
+	this->_gateKeeper = mode;
 }
 
 ///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
