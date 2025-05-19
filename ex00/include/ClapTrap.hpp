@@ -21,10 +21,20 @@ class ClapTrap
 			~ClapTrap();
 		// Operator overloads
 			ClapTrap	&operator=(ClapTrap const &original);
+		// Getters
+			std::string const	getName() const;
+			unsigned int const	getHitPoints() const;
+			unsigned int const	getEnergyPoints() const;
+			unsigned int const	getAttackDamage() const;
+		// Setters
+			void				setName(std::string name);
+			void				setHitPoints(unsigned int amount);
+			void 				setEnergyPoints(unsigned int amount);
+			void 				setAttackDamage(unsigned int amount);
 		// Member functions
-			void		attack(const std::string &target);
-			void		takeDamage(unsigned int amount);
-			void		beRepaired(unsigned int amount);
+			void				attack(const std::string &target);
+			void				takeDamage(unsigned int amount);
+			void				beRepaired(unsigned int amount);
 
 	private:
 		std::string		_name;
