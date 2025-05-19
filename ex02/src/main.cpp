@@ -1,15 +1,25 @@
+#include <iostream>
+
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
+#define BLUE	"\033[34m"
+#define RESET	"\033[0m"
+
+#define PRINT_SECTION_TITLE(x) \
+do { \
+	std::cout << BLUE x RESET << std::endl; \
+} while (0)
+
 int main()
 {
-	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
+	PRINT_SECTION_TITLE("### TESTING CLAPTRAP ###");
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tConstructing");
 		ClapTrap a;
 		ClapTrap b("Cody");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tTesting");
 		a.attack("some other robot");
 		a.takeDamage(10);
 		a.takeDamage(10);
@@ -19,15 +29,18 @@ int main()
 		for (int i = 0; i < 12; i++)
 			b.attack("Cody-clone");
 		b.beRepaired(3);
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
-	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
+
+	std::cout << std::endl << std::endl;
+
+	PRINT_SECTION_TITLE("### TESTING SCAVTRAP ###");
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tConstructing");
 		ScavTrap c;
 		ScavTrap d("Savage");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tTesting");
 		c.attack("CloneTrap");
 		// for (int i = 0; i < 50; i++)
 		// 	c.attack("CloneTrap");
@@ -40,24 +53,32 @@ int main()
 		d.takeDamage(101);
 		d.takeDamage(15);
 		d.attack("ScavTrap-clone");
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
-	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
-	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-		FragTrap e;
-		FragTrap f("Chadd");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
-		e.highFivesGuys();
-		e.attack("some random dude");
-		e.takeDamage(101);
-		e.takeDamage(1);
-		e.attack("some random dude");
-		f.highFivesGuys();
-		// for(int i = 0; i < 101; i++)
-		// 	f.attack("FragTrap-clone");
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+	std::cout << std::endl << std::endl;
+
+	PRINT_SECTION_TITLE("### TESTING FRAGTRAP ###");
+	{
+		PRINT_SECTION_TITLE("\tConstructing");
+		FragTrap c;
+		FragTrap d("Lockne");
+
+		PRINT_SECTION_TITLE("\tTesting");
+		c.attack("CloneTrap");
+		// for (int i = 0; i < 50; i++)
+		// 	c.attack("CloneTrap");
+		c.beRepaired(22);
+		c.takeDamage(21);
+		c.beRepaired(22);
+		c.highFivesGuys();
+		c.highFivesGuys();
+		d.attack("Lockne-clone");
+		d.takeDamage(101);
+		d.takeDamage(15);
+		d.attack("ScavTrap-clone");
+		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
+
 	return (0);
 }
