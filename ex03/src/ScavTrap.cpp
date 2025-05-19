@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "ScavTrap.hpp"
 
 ///CONSTRUCTORS/////////////////////////////////////////////////////////////////
@@ -22,7 +24,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const &original) : ClapTrap(original)
 {
 	PRINT_42;
-	this->_gateKeeper = original._gateKeeper;
+	this->_gateKeeper = original.getGateKeeper();
+	*this = original;
 }
 
 ///DESTRUCTORS//////////////////////////////////////////////////////////////////
@@ -35,9 +38,6 @@ ScavTrap::~ScavTrap()
 ScavTrap	&ScavTrap::operator=(ScavTrap const &original)
 {
 	PRINT_42;
-
-	if (this == &original)
-		return (*this);
 	this->_name = original._name;
 	this->_hitPoints = original._hitPoints;
 	this->_energyPoints = original._energyPoints;
@@ -46,12 +46,24 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &original)
 	return (*this);
 }
 
+///GETTERS//////////////////////////////////////////////////////////////////////
+bool	ScavTrap::getGateKeeper() const
+{
+	return (this->_gateKeeper);
+}
+
+///SETTERS//////////////////////////////////////////////////////////////////////
+void	ScavTrap::setGateKeeper(bool mode)
+{
+	this->_gateKeeper = mode;
+}
+
 ///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void	ScavTrap::attack(const std::string &target)
 {
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 	{
-		std::cout << "ScavTrap " << this->_name << " attacks " << target <<
+		std::cout << "ScavTrap " << this->getName() << " attacks " << target <<
 		", dealing " << this->_attackDamage << " points of damage!" <<
 		std::endl;
 		this->_energyPoints--;

@@ -19,7 +19,7 @@ class FragTrap : virtual public ClapTrap
 			FragTrap(std::string name);
 			FragTrap(FragTrap const &original);
 		// Destructor
-			virtual ~FragTrap();
+			virtual	~FragTrap();
 		// Operator overloads
 			FragTrap	&operator=(FragTrap const &original);
 		// Member functions

@@ -45,6 +45,18 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &original)
 	return (*this);
 }
 
+///GETTERS//////////////////////////////////////////////////////////////////////
+std::string const	DiamondTrap::getName() const
+{
+	return (this->_name);
+}
+
+///SETTERS//////////////////////////////////////////////////////////////////////
+void	DiamondTrap::setName(std::string name)
+{
+	this->_name = name;
+}
+
 ///MEMBER FUNCTIONS/////////////////////////////////////////////////////////////
 void	DiamondTrap::attack(const std::string &target)
 {

@@ -1,6 +1,6 @@
 NAME		=	DiamondTrap
 CXX			=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -fstandalone-debug -std=c++98
 CXXFLAGS	+=	-g3
 CXXFLAGS	+=	-Iinclude
 
