@@ -18,7 +18,7 @@ class ClapTrap
 			ClapTrap(std::string name);
 			ClapTrap(ClapTrap const &original);
 		// Destructors
-			~ClapTrap();
+			virtual	~ClapTrap();
 		// Operator overloads
 			ClapTrap	&operator=(ClapTrap const &original);
 		// Getters

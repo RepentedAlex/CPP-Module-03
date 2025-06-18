@@ -38,7 +38,8 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &original)
 
 	if (this == &original)
 		return (*this);
-	this->_name = original._name + "_clap_name";
+	this->_name = original._name;
+	ClapTrap::_name = original.ClapTrap::_name;
 	this->_hitPoints = original._hitPoints;
 	this->_energyPoints = original._energyPoints;
 	this->_attackDamage = original._attackDamage;

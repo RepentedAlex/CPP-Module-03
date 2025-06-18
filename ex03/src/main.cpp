@@ -17,6 +17,7 @@ int main()
 		PRINT_SECTION_TITLE("\tConstructing");
 		DiamondTrap c;
 		DiamondTrap d("Malingen");
+		DiamondTrap	e("TEST");
 
 		PRINT_SECTION_TITLE("\tTesting");
 		c.attack("CloneTrap");
@@ -27,10 +28,11 @@ int main()
 		c.beRepaired(22);
 		c.whoAmI();
 		d.whoAmI();
-		d.attack("Malingen-clone");
+		d.attack("Lockne");
 		d.takeDamage(101);
 		d.takeDamage(15);
 		d.attack("ScavTrap-clone");
+		c = d;
 		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
 

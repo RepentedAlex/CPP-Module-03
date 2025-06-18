@@ -1,6 +1,7 @@
 NAME		=	DiamondTrap
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -fstandalone-debug -std=c++98
+CXXFLAGS	=	-MMD -MP
 CXXFLAGS	+=	-g3
 CXXFLAGS	+=	-Iinclude
 
@@ -56,5 +57,7 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+-include $(OBJ:.o=.d)
 
 .PHONY: all clean fclean re

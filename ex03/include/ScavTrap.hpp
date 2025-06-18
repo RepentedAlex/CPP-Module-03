@@ -20,7 +20,7 @@ class ScavTrap : virtual public ClapTrap
 			ScavTrap(std::string name);
 			ScavTrap(ScavTrap const &original);
 		// Destructors
-			virtual ~ScavTrap();
+			virtual	~ScavTrap();
 		// Operator overloads
 			ScavTrap	&operator=(ScavTrap const &original);
 		// Getters
