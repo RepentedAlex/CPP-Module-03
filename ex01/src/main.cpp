@@ -12,13 +12,13 @@ do { \
 
 int main()
 {
-	PRINT_SECTION_TITLE("### TESTING CLAPTRAP ###");
 	{
-		PRINT_SECTION_TITLE("\tConstructing");
+		std::cout << "### TESTING CLAPTRAP ###" << std::endl;
+		std::cout << BLUE "Constructing" RESET << std::endl;
 		ClapTrap a;
 		ClapTrap b("Cody");
 
-		PRINT_SECTION_TITLE("\tTesting");
+		std::cout << BLUE "Testing" RESET << std::endl;
 		a.attack("some other robot");
 		a.takeDamage(10);
 		a.takeDamage(10);
@@ -28,21 +28,19 @@ int main()
 		for (int i = 0; i < 12; i++)
 			b.attack("Cody-clone");
 		b.beRepaired(3);
-		PRINT_SECTION_TITLE("\tDeconstructing");
+		std::cout << BLUE "Deconstructing" RESET << std::endl;
 	}
 
 	std::cout << std::endl << std::endl;
 
-	PRINT_SECTION_TITLE("### TESTING SCAVTRAP ###");
 	{
+		PRINT_SECTION_TITLE("### TESTING SCAVTRAP ###");
 		PRINT_SECTION_TITLE("\tConstructing");
 		ScavTrap c;
 		ScavTrap d("Savage");
 
 		PRINT_SECTION_TITLE("\tTesting");
 		c.attack("CloneTrap");
-		// for (int i = 0; i < 50; i++)
-		// 	c.attack("CloneTrap");
 		c.beRepaired(22);
 		c.takeDamage(21);
 		c.beRepaired(22);
@@ -54,5 +52,6 @@ int main()
 		d.attack("ScavTrap-clone");
 		PRINT_SECTION_TITLE("\tDeconstructing");
 	}
+
 	return (0);
 }
